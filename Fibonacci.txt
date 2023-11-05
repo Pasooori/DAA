@@ -1,0 +1,42 @@
+RECURSIVE: (step count: 0*1+1*1+1*2...+n*n) (filename- Fibonacci)
+-------------
+public class Fibonacci {
+
+    public static void main(String[] args) {
+
+        int n = 5; // Change this to the desired Fibonacci number you want to calculate
+
+        System.out.println("Fibonacci series up to position " + n + ":");
+
+        for (int i = 0; i <= n; i++) {
+
+            int result = calculateFibonacci(i);
+
+            System.out.print(result + " ");
+
+        }
+
+        System.out.println(); // Print a new line for better formatting
+
+        System.out.println("Fibonacci number at position " + n + " is: " + calculateFibonacci(n));
+
+        System.out.println("Step count: " + stepCount);
+
+    }
+    static int stepCount = 0; // Variable to keep track of the step count
+
+    public static int calculateFibonacci(int n) {
+
+        stepCount++; // Increment the step count for each function call
+
+        if (n <= 1) {
+
+            return n;
+
+        }
+
+        return calculateFibonacci(n - 1) + calculateFibonacci(n - 2);
+
+    }
+
+}
